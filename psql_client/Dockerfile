@@ -19,5 +19,4 @@ RUN echo "deb http://apt.postgresql.org/pub/repos/apt/ jessie-pgdg main" >> /etc
 RUN wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | apt-key add -
 RUN apt-get install -y postgresql-client-9.4
 
-# COPY entrypoint.sh /entrypoint.sh
 ENTRYPOINT psql -h $DB_PORT_5432_TCP_ADDR -p $DB_PORT_5432_TCP_PORT
