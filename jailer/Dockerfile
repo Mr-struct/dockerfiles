@@ -1,6 +1,8 @@
 # USAGE:
-# $ docker-machine scp /Users/teddy/recombine/recombine-migrations-docker/extraction_model_13.csv trw-dockermachine:/home/ubuntu/extraction_model.csv
-# $ docker-machine scp -r /Users/teddy/recombine/jailer/datamodel/recombine trw-dockermachine:/home/ubuntu/recombine_datamodel
+# On docker machine host: mkdir /home/ubuntu/jailer
+# On docker machine host: mkdir /home/ubuntu/jailer/dump_output
+# $ docker-machine scp /Users/teddy/recombine/recombine-migrations-docker/extraction_model_13.csv trw-dockermachine:/home/ubuntu/jailer/extraction_model.csv
+# $ docker-machine scp -r /Users/teddy/recombine/jailer/datamodel/recombine trw-dockermachine:/home/ubuntu/jailer/recombine_datamodel
 #
 # $ docker run \
 #   --detach \
