@@ -1,5 +1,5 @@
 # USAGE:
-# With credentials in ~/.aws dir: $ docker-machine create --driver amazonec2 --amazonec2-instance-type "m3.2xlarge" --amazonec2-root-size 100 --amazonec2-vpc-id vpc-8c8b90ee trw-ec2-docker
+# $ docker-machine create --driver amazonec2 --amazonec2-instance-type "m3.2xlarge" --amazonec2-root-size 100 --amazonec2-vpc-id vpc-8c8b90ee trw-ec2-docker
 # $ echo "mkdir /home/ubuntu/jailer" | docker-machine ssh trw-ec2-docker
 # $ echo "mkdir /home/ubuntu/jailer/dump_output" | docker-machine ssh trw-ec2-docker
 # $ docker-machine scp ./jailer_extraction_models/extraction_model_13.csv trw-dockermachine:/home/ubuntu/jailer/extraction_model.csv
