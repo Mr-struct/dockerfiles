@@ -1,4 +1,6 @@
 # USAGE (with recombine-migrations project root as working directory):
+# $ Restore a recent snapshot of production to a running RDS instance
+# Manually run Jailer against it, using the extraction_model and datamodel stored in recombine-migrations repo as a base, and updating those files in version control if there are any changes necessary.
 # $ docker-machine create --driver amazonec2 --amazonec2-instance-type "m3.2xlarge" --amazonec2-root-size 100 --amazonec2-vpc-id vpc-8c8b90ee trw-ec2-docker
 # $ echo "mkdir /home/ubuntu/jailer" | docker-machine ssh trw-ec2-docker
 # $ echo "mkdir /home/ubuntu/jailer/dump_output" | docker-machine ssh trw-ec2-docker
