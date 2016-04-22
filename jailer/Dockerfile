@@ -1,11 +1,18 @@
 # USAGE (with recombine-migrations project root as working directory):
-# $ Restore a recent snapshot of production to a running RDS instance
-# Manually run Jailer against it, using the extraction_model and datamodel stored in recombine-migrations repo as a base, and updating those files in version control if there are any changes necessary.
+# $ Restore a recent snapshot of production to a running RDS instance (using rc_new_integration_db docker image)
+
+# Manually run Jailer against the snapshot db.
+# Use the extraction_model and datamodel stored in recombine-migrations repo as a base.
+# Store any changes you make to the extraction_model and datamodel in version control in the recombine-migrations repo.
+# $ java -jar jailer.jar -datamodel ~/recombine/recombine-migrations/jailer/datamodel -UTF8
+
+# Set up a somewhat large EC2 instance to run the jailer export command from.
+# This is much more stable than trying to run the export command from your local machine.
 # $ docker-machine create --driver amazonec2 --amazonec2-instance-type "m3.2xlarge" --amazonec2-root-size 100 --amazonec2-vpc-id vpc-8c8b90ee trw-ec2-docker
 # $ echo "mkdir /home/ubuntu/jailer" | docker-machine ssh trw-ec2-docker
 # $ echo "mkdir /home/ubuntu/jailer/dump_output" | docker-machine ssh trw-ec2-docker
-# $ docker-machine scp ./jailer/extraction_model.csv trw-ec2-docker:/home/ubuntu/jailer/extraction_model.csv
-# $ docker-machine scp -r ./jailer/datamodel trw-ec2-docker:/home/ubuntu/jailer/datamodel
+# $ docker-machine scp ~/recombine/recombine-migrations/jailer/extraction_model.csv trw-ec2-docker:/home/ubuntu/jailer/extraction_model.csv
+# $ docker-machine scp -r ~/recombine/recombine-migrations/jailer/datamodel trw-ec2-docker:/home/ubuntu/jailer/datamodel
 #
 # $ docker run \
 #   --detach \
