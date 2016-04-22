@@ -1,8 +1,9 @@
 # USAGE:
-# On docker machine host: mkdir /home/ubuntu/jailer
-# On docker machine host: mkdir /home/ubuntu/jailer/dump_output
-# $ docker-machine scp /Users/teddy/recombine/recombine-migrations-docker/extraction_model_13.csv trw-dockermachine:/home/ubuntu/jailer/extraction_model.csv
-# $ docker-machine scp -r /Users/teddy/recombine/jailer/datamodel/recombine trw-dockermachine:/home/ubuntu/jailer/recombine_datamodel
+# With credentials in ~/.aws dir: $ docker-machine create --driver amazonec2 --amazonec2-instance-type "m3.2xlarge" --amazonec2-root-size 100 --amazonec2-vpc-id vpc-8c8b90ee trw-ec2-docker
+# $ echo "mkdir /home/ubuntu/jailer" | docker-machine ssh trw-ec2-docker
+# $ echo "mkdir /home/ubuntu/jailer/dump_output" | docker-machine ssh trw-ec2-docker
+# $ docker-machine scp ./jailer_extraction_models/extraction_model_13.csv trw-dockermachine:/home/ubuntu/jailer/extraction_model.csv
+# $ docker-machine scp -r ./jailer_datamodels/datamodel/recombine trw-dockermachine:/home/ubuntu/jailer/recombine_datamodel
 #
 # $ docker run \
 #   --detach \
