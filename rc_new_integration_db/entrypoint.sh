@@ -12,7 +12,8 @@ last_snapshot=`aws rds describe-db-snapshots \
   --snapshot-type automated \
   --region $region \
   --output json | jq -r '(.DBSnapshots | sort_by(.SnapshotCreateTime) | reverse)[0]'`
-db_snapshot_identifier=`echo $last_snapshot | jq -r '.DBSnapshotIdentifier'`
+last_snapshot_identifier=`echo $last_snapshot | jq -r '.DBSnapshotIdentifier'`
+db_snapshot_identifier=${3-$last_snapshot_identifier}
 port=`echo $last_snapshot | jq -r '.Port'`
 user=`echo $last_snapshot | jq -r '.MasterUsername'`
 db=$user
