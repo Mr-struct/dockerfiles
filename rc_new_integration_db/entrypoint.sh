@@ -41,6 +41,7 @@ aws rds restore-db-instance-from-db-snapshot \
   --no-multi-az \
   --publicly-accessible \
   --db-subnet-group-name recombine \
+  --tags Key=workload-type,Value=integration Key=env,Value=integration \
   --output json
 
 
