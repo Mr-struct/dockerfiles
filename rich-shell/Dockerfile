@@ -9,6 +9,9 @@ RUN echo "deb http://apt.postgresql.org/pub/repos/apt/ jessie-pgdg main" >> /etc
 RUN wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | apt-key add -
 RUN apt-get install -y postgresql-client-9.4
 
+# Ruby
+RUN apt-get install -y ruby-full
+
 # AWS CLI and related tools
 RUN apt-get install -y python3
 RUN wget --quiet https://bootstrap.pypa.io/get-pip.py
